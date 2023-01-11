@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "NoSpoilFlix",
+  "version": "1.0.0",
+  "description": "Blur images and descriptions of not watched Netflix episodes",
+  "action": {
+    "default_icon": "assets/icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/blur.js"],
+      "matches": ["https://www.netflix.com/*", "https://www.netflix.com/browse"]
+    }
+  ],
+  "author": "la-lo-go"
+}

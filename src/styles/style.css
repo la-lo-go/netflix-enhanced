@@ -1,0 +1,152 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #000000;
+}
+
+h1 {
+  color: #E50914;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 1rem;
+}
+
+.action-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.action-button img {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 100%;
+  cursor: pointer;
+}
+
+.action-button img:hover {
+  -webkit-filter: invert(80%);
+          filter: invert(80%);
+}
+
+.toggles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.toggles div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+input[type="checkbox"] {
+  /* Oculta el checkbox */
+  opacity: 0;
+  width: 0;
+  height: 0;
+  /* Añade el toggle */
+  /* Añade el interruptor */
+  /* Añade el indicador */
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  /* Añade la columna a la derecha */
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  text-align: left;
+  /* Alinea el texto del label a la izquierda */
+}
+
+input[type="checkbox"] + label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 30px;
+  -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3);
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  /* Añade la columna a la izquierda */
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+}
+
+input[type="checkbox"] + label:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: left 0.2s;
+  transition: left 0.2s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-color: #E50914;
+}
+
+input[type="checkbox"]:checked + label:after {
+  left: 28px;
+}
+/*# sourceMappingURL=style.css.map */
