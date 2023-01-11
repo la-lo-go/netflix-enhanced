@@ -1,4 +1,4 @@
-# Nteflix Enhaced
+# Netflix Enhaced
 Hide spoilers from not seen episodes and automatically skip intros
 
 ## WARNING:
