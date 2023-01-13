@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "description": "Blur images and descriptions of not watched Netflix episodes",
   "action": {
-    "default_icon": "assets/icon.png",
+    "default_icon": "assets/icons/icon.png",
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "assets/icon16.png",
-    "48": "assets/icon48.png",
-    "128": "assets/icon128.png"
+    "16": "assets/icons/icon_16.png",
+    "48": "assets/icons/icon_48.png",
+    "128": "assets/icons/icon_128.png"
   },
   "content_scripts": [
     {

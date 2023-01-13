@@ -10,11 +10,9 @@ body {
   height: auto;
 }
 
-h1 {
-  color: #e50914;
-  font-size: 1.25rem;
-  text-align: center;
-  margin: 1rem 1rem;
+#logo {
+  margin: 0.65rem 0.5rem -0.75rem;
+  width: 90%;
 }
 
 label {
@@ -29,10 +27,9 @@ label {
 .switches {
   width: 95%;
   max-width: 500px;
-  margin: 8% auto 4%;
+  margin: 8% auto 0%;
   border-radius: 5px;
   color: #e8e9ed;
-  background: #18172c;
 }
 
 .switches label {
