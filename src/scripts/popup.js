@@ -1,4 +1,4 @@
-const checkbox = document.getElementById("toggle-blur");
+const checkbox = document.getElementById("switch-blur");
 
 if (localStorage.getItem(checkbox.name) === "true") {
   checkbox.checked = true;

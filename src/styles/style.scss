@@ -1,118 +1,111 @@
-$netflix-red: #E50914;
+// switch CSS code (refactored to SCSS by me) by:
+// https://codepen.io/tutsplus/pen/qBOjjvO
 
-*{
+$color_2: inherit;
+$white: #e8e9ed;
+$gray: #434257;
+$blue: #18172c;
+$netflix-color: #e50914;
+$font-family_1: "Open Sans", "Helvetica Neue", sans-serif;
+$background-color: #000000;
+
+* {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: $font-family_1;
 }
 
-body{
-  background-color: #000000;
+body {
+  background-color: $background-color;
+  width: 200px;
+  height: auto;
 }
 
-h1{
-  color: $netflix-red;
-  font-size: 2rem;
+h1 {
+  color: $netflix-color;
+  font-size: 1.25rem;
   text-align: center;
   margin: 1rem 1rem;
 }
 
-.action-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+label {
+  cursor: pointer;
+}
 
-  img {
-    transition: 0.3s;
-    width: 100%;
-    cursor: pointer;
+[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
 
-    &:hover {
-      filter: invert(80%);
+.switches {
+  width: 95%;
+  max-width: 500px;
+
+  margin: 8% auto 4%;
+  border-radius: 5px;
+  color: $white;
+  background: $blue;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7%;
+    font-size: 0.9rem;
+  }
+
+  span {
+    &:last-child {
+      position: relative;
+      width: 50px;
+      height: 26px;
+      border-radius: 15px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+      background: $gray;
+      transition: all 0.3s;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        width: 24px;
+        height: 24px;
+        background: $white;
+        border-radius: 50%;
+        z-index: 1;
+        transition: transform 0.3s;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        width: 12px;
+        height: 12px;
+        transform: translateY(-50%);
+        background-size: 12px 12px;
+      }
+    }
+  }
+
+  [type="checkbox"]:checked + label span:last-child {
+    background: $netflix-color;
+
+    &::before {
+      transform: translateX(24px);
+    }
+
+    &::after {
+      width: 14px;
+      height: 14px;
+      left: 8px;
+      background-size: 14px 14px;
     }
   }
 }
 
-.toggles {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.toggles div {
-  display: flex;
-  align-items: center;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-input[type="checkbox"] {
-  /* Oculta el checkbox */
-  opacity: 0;
-  width: 0;
-  height: 0;
-
-  /* Añade el toggle */
-  + label {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-
-    /* Añade la columna a la derecha */
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 0;
-    text-align: left; /* Alinea el texto del label a la izquierda */
-  }
-
-  /* Añade el interruptor */
-  + label:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 24px;
-    background-color: #ccc;
-    border-radius: 30px;
-    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.2s;
-
-    /* Añade la columna a la izquierda */
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 0;
-  }
-
-  /* Añade el indicador */
-  + label:after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: left 0.2s;
-  }
-
-  &:checked {
-    + label:before {
-      background-color: $netflix-red;
-    }
-  
-    + label:after {
-      left: 28px;
-    }
+@media screen and (max-width: 600px) {
+  .switches li::before {
+    display: none;
   }
 }

@@ -14,19 +14,24 @@
 
 <body>
 
-  <h1>NoSpoilFlix</h1>
+  <h1>Netflix Enhanced</h1>
 
-  <div class="toggles">
-    <div class="container">
-      <input type="checkbox" id="toggle-blur" checked>
-      <label for="toggle-blur">Toggle 1</label>
-    </div>
-
-    <!-- <div>
-      <input type="checkbox" id="toggle2">
-      <label for="toggle2">Toggle 2</label>
-    </div> -->
-  </div>
+  <ul class="switches">
+    <li>
+      <input type="checkbox" id="switch-blur">
+      <label for="switch-blur">
+        <span>Blur spoilers</span>
+        <span></span>
+      </label>
+    </li>
+    <li>
+      <input type="checkbox" id="switch-skip">
+      <label for="switch-skip">
+        <span>Auto-skip intro</span>
+        <span></span>
+      </label>
+    </li>
+  </ul>
 
   <script src="scripts/popup.js"></script>
 </body>

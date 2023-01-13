@@ -15,7 +15,7 @@
   "content_scripts": [
     {
       "js": ["scripts/blur.js"],
-      "matches": ["https://www.netflix.com/*", "https://www.netflix.com/browse"]
+      "matches": ["<all_urls>", "https://www.netflix.com/*", "https://www.netflix.com/browse"]
     }
   ],
   "author": "la-lo-go"
