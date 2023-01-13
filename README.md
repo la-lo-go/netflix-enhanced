@@ -1,4 +1,4 @@
-![Netflix Enhanced Logo](/img/logo/SVG/NetflixEnhanced_Logo_Logo_Sin-Fondo%40SVG.svg)
+![Netflix Enhanced Logo](/img/logo/SVG/NetflixEnhanced_Logo_Logo_Sin-Fondo@SVG.svg)
 
 Hide spoilers from not seen episodes and automatically skip intros
 
