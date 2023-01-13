@@ -2,8 +2,11 @@
 
 Hide spoilers from not seen episodes and automatically skip intros
 
+## Preview
+![Preview of the extension](img/docs/preview.png)
+
 ## WARNING:
 This code is not finished (is arround 70%) so, please, don't be like Troy arriving with the pizzas :D
 
-<img src="./img/docs/troy.gif">
+![Troy arriving with the pizzas](img/docs/troy.gif)
 
