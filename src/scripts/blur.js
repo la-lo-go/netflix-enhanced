@@ -58,12 +58,13 @@ function filterWatchedEpisodes(episodes) {
   episodes.forEach((episode) => {
     const progressElement = episode.querySelector("progress");
 
+    // if thre is no progress bar then the episode is not watched
     if (!progressElement) {
       episodesToBlur.push(episode);
     }
   });
 
-  // si episodios vistos es igual a la cantidad de episodios eliminar el primer elemento
+  // if episodes viewed is equal to the number of episodes remove the first element
   if (episodes.length === episodesToBlur.length) {
     episodesToBlur.shift();
   }
