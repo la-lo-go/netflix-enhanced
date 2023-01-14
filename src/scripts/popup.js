@@ -1,27 +1,27 @@
-const checkbox = document.getElementById("switch-blur");
+const switches = document.querySelectorAll('input[type=checkbox]');
 
-if (localStorage.getItem(checkbox.name) === "true") {
-  checkbox.checked = true;
-} else if (localStorage.getItem(checkbox.name) === "false") {
-  checkbox.checked = false;
-} else {
-  storeCheckboxValue(); // Store default value (true)
-}
+switches.forEach((switchItem) => {
 
-sendBlurStatus();
+  if (localStorage.getItem(switchItem.id) === "true") {
+    switchItem.checked = true;
+  } else if (localStorage.getItem(switchItem.id) === "false") {
+    switchItem.checked = false;
+  } else { // Store default value (true)
+    storeSwitchValue(switchItem);
+  }
 
-checkbox.addEventListener("click", () => {
-  storeCheckboxValue();
-  sendBlurStatus();
+  switchItem.addEventListener("click", () => {
+    storeSwitchValue(switchItem);
+    sendStatus(switchItem);
+  });
 });
 
-function storeCheckboxValue() {
-  localStorage.setItem(checkbox.name, checkbox.checked);
+function sendStatus(switchItem) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {[switchItem.id]: switchItem.checked});
+  });
 }
 
-function sendBlurStatus() {
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    var activeTab = tabs[0];
-    chrome.tabs.sendMessage(activeTab.id, {"blur status": checkbox.checked});
-  });
+function storeSwitchValue(switchItem) {
+  localStorage.setItem(switchItem.id, switchItem.checked);
 }
