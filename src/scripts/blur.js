@@ -1,12 +1,11 @@
 const episodeSelectorClass = ".episodeSelector-container"; // Div of epidodes
 const titleCardListClass = ".titleCardList--container"; // Div of each episode
 
-const div_episodeSelector = document.querySelector(episodeSelectorClass);
 let blurEnabled = false;
 
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   console.log(message);
-  
+
   if (message.message === "blur status") {
     blurEnabled = message.value;
 
@@ -16,7 +15,8 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
   }
 });
 
-const observerBody = new MutationObserver(() => {
+const observerBody = new MutationObserver((mutations) => {
+  const div_episodeSelector = document.querySelector(episodeSelectorClass);
 
   if (!div_episodeSelector) {
     return;
@@ -24,7 +24,7 @@ const observerBody = new MutationObserver(() => {
 
   blur();
 
-  let observerEpisodes = new MutationObserver(() => {
+  let observerEpisodes = new MutationObserver((mutations) => {
     blur();
   });
 
