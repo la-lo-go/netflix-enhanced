@@ -10,3 +10,5 @@ This code is not finished (is arround 70%) so, please, don't be like Troy arrivi
 
 ![Troy arriving with the pizzas](img/docs/troy.gif)
 
+## Disclaimer
+_Netflix_ is a trademark of _Netflix, Inc_. The author of _Netflix Enhanced_ is not affiliated with these company.
